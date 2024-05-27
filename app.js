@@ -1,15 +1,11 @@
-const http = require('http')
+const miURL = new URL(
+  "https://www.ejemplo.org/cursos/programacion?ordenar=vistas&nivel=1"
+);
 
-const servidor = http.createServer((req, res) => {
-console.log('==> res (respuesta)')
-res.setHeader('content-type', 'application/json')
-console.log(res.getHeaders())
+console.log(miURL.hostname); // www.ejemplo.org
 
-res.end('Hola mundo')
-});
+console.log(miURL.pathname); // /cursos/programacion
 
-const PUERTO = 3000
-
-servidor.listen(PUERTO, () => {
-    console.log(`El servidor está escuchando en el puerto http://localhost:${PUERTO}...`)
-});
+console.log(miURL.searchParams); // URLSearchParams { 'ordenar' => 'vistas', 'nivel' => '1' }
+console.log(miURL.searchParams.get("ordenar"));
+console.log(miURL.searchParams.get("nivel"));
