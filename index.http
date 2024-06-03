@@ -1,1 +1,9 @@
-DELETE  http://localhost:3000/
+POST  http://localhost:3000/cursos/programacion
+
+###
+
+GET http://localhost:3000/ HTTP/1.1
+
+### 
+
+PUT http://localhost:3000/ HTTP/1.1
